@@ -62,7 +62,55 @@ RSpec.describe "Cars", type: :request do
       expect(car.city).to eq "San Andreas"
       expect(car.state).to eq "CA"
       expect(car.zip).to eq "90210"
+    end
+  end
 
+  describe "PATCH /update" do 
+    it 'updates a car' do
+      car = user.cars.create(
+        user_id: user.id,
+          make: "Tesla",
+          model: "Model S",
+          year: 2020,
+          mileage: 5000,
+          image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvZkwSkgsvgEOTdPHW3Lw-rVJPTM_rp0R9Lg&usqp=CAU",
+          price: 89000.00,
+          description: "Everything is Electric",
+          street: "1337 Los Santos Way",
+          city: "San Andreas",
+          state: "CA",
+          zip: "90210"
+        )
+      car_params = {
+        car: {
+          user_id: user.id,
+          make: nil,
+          model: nil,
+          year: nil,
+          mileage: nil,
+          image: nil,
+          price: nil,
+          description: nil,
+          street: nil,
+          city: nil,
+          state: nil,
+          zip: nil
+        }
+      }
+      patch "/cars/#{car.id}", params: car_params
+      expect(response).to have_http_status(422)
+      car = JSON.parse(response.body)
+      expect(car['make']).to include "can't be blank"
+      expect(car['model']).to include "can't be blank"
+      expect(car['year']).to include "can't be blank"
+      expect(car['mileage']).to include "can't be blank"
+      expect(car['image']).to include "can't be blank"
+      expect(car['price']).to include "can't be blank"
+      expect(car['description']).to include "can't be blank"
+      expect(car['street']).to include "can't be blank"
+      expect(car['city']).to include "can't be blank"
+      expect(car['state']).to include "can't be blank"
+      expect(car['zip']).to include "can't be blank"
     end
   end
 end
