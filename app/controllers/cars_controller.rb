@@ -24,6 +24,16 @@ class CarsController < ApplicationController
         end
     end
 
+    def destroy
+        car = Car.find(params[:id])
+        if car.destroy
+            render json: car
+        else 
+            render json: car.errors, status: 409
+        end
+    end
+        
+
 
 
 

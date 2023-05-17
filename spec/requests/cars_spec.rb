@@ -113,4 +113,25 @@ RSpec.describe "Cars", type: :request do
       expect(car['zip']).to include "can't be blank"
     end
   end
+  describe "DELETE /destroy" do
+    it "should delete a car" do
+    car = Car.create(
+      user_id: user.id,
+          make: "Tesla",
+          model: "Model S",
+          year: 2020,
+          mileage: 5000,
+          image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvZkwSkgsvgEOTdPHW3Lw-rVJPTM_rp0R9Lg&usqp=CAU",
+          price: 89000.00,
+          description: "Everything is Electric",
+          street: "1337 Los Santos Way",
+          city: "San Andreas",
+          state: "CA",
+          zip: "90210"
+    )
+    delete "/cars/#{car.id}"
+    expect(response).to have_http_status(200)
+  
+  end
+  end
 end
