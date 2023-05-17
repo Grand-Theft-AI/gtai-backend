@@ -21,7 +21,7 @@ RSpec.describe Car, type: :model do
 
   it 'should have a valid model' do
     car = user.cars.create(
-      make: "Tesla"
+      make: "Tesla",
       year: 2020,
       mileage: 5000,
       image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvZkwSkgsvgEOTdPHW3Lw-rVJPTM_rp0R9Lg&usqp=CAU",
@@ -38,8 +38,8 @@ RSpec.describe Car, type: :model do
 
   it 'should have a valid year' do
     car = user.cars.create(
-      make: "Tesla"
-      model: "Model S"
+      make: "Tesla",
+      model: "Model S",
       mileage: 5000,
       image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvZkwSkgsvgEOTdPHW3Lw-rVJPTM_rp0R9Lg&usqp=CAU",
       price: 89000.00,
@@ -55,8 +55,8 @@ RSpec.describe Car, type: :model do
 
   it 'should have valid mileage' do
     car = user.cars.create(
-      make: "Tesla"
-      model: "Model S"
+      make: "Tesla",
+      model: "Model S",
       year: 2020,
       image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvZkwSkgsvgEOTdPHW3Lw-rVJPTM_rp0R9Lg&usqp=CAU",
       price: 89000.00,
