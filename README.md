@@ -2,7 +2,9 @@
 
 # GTAI
 
-GTAI is a web application that allows users to buy cars and store them in a database. It provides full CRUD (Create, Read, Update, Delete) functionality, allowing users to perform various operations on car listings. GTAI also includes authorization and authentication features for secure access.
+GTAI is a web application that allows users to buy cars and store them in a database. Upon logging in, the user is given the option to steal a car rather than buy it. It provides full CRUD (Create, Read, Update, Delete) functionality, allowing users to perform various operations on car listings. GTAI also includes authorization and authentication features for secure access.
+
+Live site [GTAI](https://gtai-frontend.onrender.com/)
 
 # Overview
 
@@ -43,11 +45,12 @@ GTAI is a web application that allows users to buy cars and store them in a data
 - Navigate into the frontend directory: $ `cd gtai-frontend`
 - Install necessary dependencies: $ `yarn`
 - Start the server: $ `yarn start`
+- Frontend is now running on http://localhost:30001
 
 ## Tech Used
 
-- Rails version 7.0.4.3
-- Ruby version 3.2
+- Rails 7.0.4.3
+- Ruby 3.2
 - [React](https://react.dev/)
 - [Tailwindcss](https://tailwindcss.com/)
 - [Reactstrap](https://reactstrap.github.io/)
